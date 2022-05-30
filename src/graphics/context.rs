@@ -128,7 +128,8 @@ impl GraphicsContextGeneric<GlBackendSpec> {
             .with_title(window_setup.title.clone())
             .with_inner_size(window_size)
             .with_resizable(window_mode.resizable)
-            .with_visible(window_mode.visible);
+            .with_visible(window_mode.visible)
+            .with_transparent(window_mode.transparent);
 
         // We need to disable drag-and-drop on windows for multithreaded stuff like cpal to work.
         // See winit bug here: https://github.com/rust-windowing/winit/pull/1524

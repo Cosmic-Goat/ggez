@@ -73,6 +73,9 @@ pub struct WindowMode {
     /// Whether or not to show window decorations
     #[default = false]
     pub borderless: bool,
+    /// Whether or not the window should be transparent
+    #[default = false]
+    pub transparent: bool,
     /// Minimum width for resizable windows; 0 means no limit
     #[default = 0.0]
     pub min_width: f32,
@@ -127,6 +130,13 @@ impl WindowMode {
     /// Set whether a window should be borderless in windowed mode.
     pub fn borderless(mut self, borderless: bool) -> Self {
         self.borderless = borderless;
+        self
+    }
+
+
+    /// Set whether a window should be transparent.
+    pub fn transparent(mut self, transparent: bool) -> Self {
+        self.transparent = transparent;
         self
     }
 
